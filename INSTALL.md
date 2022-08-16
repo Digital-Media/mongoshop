@@ -1,31 +1,20 @@
 # Installation of fhooe-mongo-dock
 
-## Get repo
-
-Install it in any path on your computer.
-Open Powershell (PS) or other Terminal (prompt may be different in this case).
-
-```shell
-git clone https://github.com/Digital-Media/fhooe-mongo-dock.git
-```
+Open Powershell (PS) or other Terminal (prompt my be different then).
 
 ## Docker
 
-cd <path-to-fhooe-mongo-dock>
-```
-docker compose up -d
-```
-access mongodb via commandline in container
-```
-docker exec -it mongo /bin/bash -c mongo
-```
-access container mongo-express via commandline
-```
-docker exec -it mongo-express /bin/bash
-```
-access mongo-express vis browser: `http://localhost:8083`
-or [download](https://www.mongodb.com/try/download/compass) and install MongoDB Compass for a GUI. 
+See [fhooe-mongo-dock](https://github.com/Digital-Media/fhooe-mongo-dock)
 
-## Cloud
+### Using Docker to get Repo
 
-Get a free MongoDB Atlas account or sign in with Google [HERE](https://www.mongodb.com/cloud/atlas/register).
+If you use private repos built by [Upper Austria University of Applied Sciences (FH Oberösterreich), Hagenberg Campus](https://www.fh-ooe.at/en/hagenberg-campus/).
+
+```shell
+docker exec -it webapp /bin/bash -c "cd /var/www/html && git clone https://github.com/Digital-Media/mongoshop.git"
+```
+```shell
+docker exec -it webapp /bin/bash -c "cd /var/www/html/webshop && composer install"
+```
+```shell
+docker exec -it webapp /bin/bash -c "cd /var/www/html/webshop && composer update"
