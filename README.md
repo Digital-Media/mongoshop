@@ -5,3 +5,7 @@ This repository provides Exercises for web development classes at the [Upper Aus
 ## Installation
 
 See [INSTALL.md](https://github.com/Digital-Media/mongoshop/blob/main/INSTALL.md)
+
+## Exercises with Doctrine
+
+https://www.doctrine-project.org/projects/doctrine-orm/en/current/tutorials/getting-started.html
