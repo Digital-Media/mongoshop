@@ -39,9 +39,8 @@
     },
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {
-            "": ["src/", "tests/"],
-        "psr-0": {"": "src/"}
+            "psr-4": {
+            "": ["", "src/", "tests/"]
         }
     },
     "scripts": {
