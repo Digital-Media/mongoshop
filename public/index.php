@@ -11,10 +11,31 @@ use Twig\TwigFunction;
 use Utilities\Utilities;
 use Exercises\AddCountry;
 use Exercises\Login;
-use Exercises\Register;
 use Exercises\MyCart;
+use Doctrine\Common\Annotations\AnnotationRegistry;
+use Doctrine\ODM\MongoDB\Configuration;
+use Doctrine\ODM\MongoDB\DocumentManager;
+use MongoDB\Client;
+use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 
-require "../vendor/autoload.php";
+if (!file_exists($file = __DIR__ . '/../vendor/autoload.php')) {
+    throw new RuntimeException('Install dependencies to run this script.');
+}
+$loader = require_once $file;
+$loader->add('Documents', __DIR__);
+
+AnnotationRegistry::registerLoader([$loader, 'loadClass']);
+
+$client = new Client('mongodb://127.0.0.1', [], ['typeMap' => DocumentManager::CLIENT_TYPEMAP]);
+$config = new Configuration();
+$config->setProxyDir(__DIR__ . '/Proxies');
+$config->setProxyNamespace('Proxies');
+$config->setHydratorDir(__DIR__ . '/Hydrators');
+$config->setHydratorNamespace('Hydrators');
+$config->setDefaultDB('doctrine_odm');
+$config->setMetadataDriverImpl(AnnotationDriver::create(__DIR__ . '/Documents'));
+
+$dm = DocumentManager::create($client, $config);
 
 session_start();
 
@@ -73,8 +94,8 @@ try {
         $twig->display("index.html.twig");
     });
 
-    $router->get("/addcountry", function () use ($twig) {
-        $addcountry = new AddCountry($twig);
+    $router->get("/addcountry", function () use ($twig, $dm) {
+        $addcountry = new AddCountry($twig, $dm);
         $countries = $addcountry->fillCountry();
         $twig->display("addcountry.html.twig", ["countries" => $countries]);
     });
