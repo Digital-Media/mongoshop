@@ -14,7 +14,7 @@ If you use private repos built by [Upper Austria University of Applied Sciences 
 docker exec -it mongoapp /bin/bash -c "cd /var/www/html && git clone https://github.com/Digital-Media/mongoshop.git"
 ```
 ```shell
-docker exec -it mongoapp /bin/bash -c "cd /var/www/html/mongoshop && composer install"
+docker exec -it mongoapp /bin/bash -c "cd /var/www/html/mongoshop && composer install && chmod -R 777 *"
 ```
 ```shell
 docker exec -it mongoapp /bin/bash -c "cd /var/www/html/mongoshop && composer update"
