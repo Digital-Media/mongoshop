@@ -15,27 +15,26 @@ use Exercises\MyCart;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\ODM\MongoDB\DocumentManager;
-use MongoDB\Client;
 use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
+use MongoDB\Client;
 
-if (!file_exists($file = __DIR__ . '/../vendor/autoload.php')) {
-    throw new RuntimeException('Install dependencies to run this script.');
-}
-$loader = require_once $file;
-$loader->add('Documents', __DIR__);
+$loader = require_once('../vendor/autoload.php');
 
 AnnotationRegistry::registerLoader([$loader, 'loadClass']);
 
-$client = new Client('mongodb://127.0.0.1', [], ['typeMap' => DocumentManager::CLIENT_TYPEMAP]);
+$client = new Client('mongodb://mongonet', [], ['typeMap' => DocumentManager::CLIENT_TYPEMAP]);
 $config = new Configuration();
-$config->setProxyDir(__DIR__ . '/Proxies');
+$config->setProxyDir('../proxies');
 $config->setProxyNamespace('Proxies');
-$config->setHydratorDir(__DIR__ . '/Hydrators');
+$config->setHydratorDir('../hydrators');
 $config->setHydratorNamespace('Hydrators');
-$config->setDefaultDB('doctrine_odm');
-$config->setMetadataDriverImpl(AnnotationDriver::create(__DIR__ . '/Documents'));
+$config->setMetadataDriverImpl(AnnotationDriver::create('../src/Documents'));
+$config->setDefaultDB('mongoshop');
 
 $dm = DocumentManager::create($client, $config);
+
+spl_autoload_register($config->getProxyManagerConfiguration()->getProxyAutoloader());
+
 
 session_start();
 
