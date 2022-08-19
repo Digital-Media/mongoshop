@@ -1,6 +1,7 @@
 <?php
 namespace Exercises;
 
+use Documents\Country;
 use Utilities\Utilities;
 
 /*
@@ -10,7 +11,7 @@ use Utilities\Utilities;
  *
  * @author Martin Harrer <martin.harrer@fh-hagenberg.at>
  */
-final class AddCountry
+final class AddCountry extends Country
 {
     /**
      * @var array messages is used to display error and status messages after a form was sent an validated
@@ -18,9 +19,19 @@ final class AddCountry
     private array $messages = [];
 
     /**
+     * @var object country provides a MongoDB ODM object to get and persist documents
+     */
+    private object $country;
+
+    /**
      * @var object twig provides a Twig object to display hmtl templates
      */
     private object $twig;
+
+    /**
+     * @var object dm provides a MongoDB
+     */
+    private object $dm;
 
     /**
      * @var array twigParams is used to set variables passed to Twig
@@ -33,38 +44,13 @@ final class AddCountry
      * Initializes Twig
      * Creates a database handler for the database connection.
      */
-    public function __construct($twig)
+    public function __construct($twig, $dm)
     {
         $this->twig=$twig;
-        $this->initDB();
+        $this->dm=$dm;
+        $this->country= new Country();
     }
 
-    /*
-     * Initialize database connection
-     *
-     * @return void Returns nothing
-     */
-    private function initDB(): void
-    {
-        $charsetAttr="SET NAMES utf8 COLLATE utf8_general_ci";
-        $dsn="mysql:host=db;port=3306;dbname=onlineshop";
-        $mysqlUser="onlineshop";
-        $mysqlPwd="geheim";
-        $multi=false;
-        $options = array(
-            // A warning is given for persistent connections in case of a interrupted database connection.
-            // This warning is shown on the web page if error_reporting=E_ALL is set in php.ini
-            PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
-            // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_NUM,
-            // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_BOTH,
-            PDO::MYSQL_ATTR_INIT_COMMAND => $charsetAttr,
-            PDO::MYSQL_ATTR_MULTI_STATEMENTS => $multi
-        );
-        $this->dbh = new PDO($dsn, $mysqlUser, $mysqlPwd, $options);
-    }
 
     /**
      * Validates the user input
@@ -121,15 +107,7 @@ final class AddCountry
     public function fillCountry(): array
     {
         $result = [];
-        $query = <<<SQL
-                 SELECT name, ISOcode 
-                 FROM country
-        SQL;
-        if ($this->dbh) {
-            $this->stmt = $this->dbh->prepare($query);
-            $this->stmt->execute();
-            $result = $this->stmt->fetchAll();
-        }
+        //$result = $this->dm->findAll(Country::class);
         return $result;
     }
 
@@ -152,16 +130,8 @@ final class AddCountry
      */
     private function addCountry(): void
     {
-        $query = /** @lang MySQL */
-            <<<SQL
-                 INSERT INTO country 
-                 SET name = :country,
-                     ISOcode = :isocode
-        SQL;
-        if ($this->dbh) {
-            $this->stmt = $this->dbh->prepare($query);
-            $params = [":country" => $_POST['country'],":isocode" => $_POST['isocode']];
-            $this->stmt->execute($params);
-        }
+        $this->country->setName($_POST['country']);
+        $this->country->setISOcode($_POST['isocode']);
+        $this->dm->flush();
     }
 }
