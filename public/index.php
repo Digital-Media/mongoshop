@@ -20,19 +20,18 @@ use MongoDB\Client;
 
 $loader = require_once('../vendor/autoload.php');
 
-AnnotationRegistry::registerLoader([$loader, 'loadClass']);
+$loader->add('Documents', __DIR__);
+AnnotationRegistry::registerLoader([$loader, 'loadClass']); //TODO change code to not depricated version
 
-$client = new Client('mongodb://mongonet', [], ['typeMap' => DocumentManager::CLIENT_TYPEMAP]);
+$client = new Client('mongodb://mongo:27017', [], ['typeMap' => DocumentManager::CLIENT_TYPEMAP]);
 $config = new Configuration();
 $config->setProxyDir('../proxies');
 $config->setProxyNamespace('Proxies');
 $config->setHydratorDir('../hydrators');
 $config->setHydratorNamespace('Hydrators');
 $config->setMetadataDriverImpl(AnnotationDriver::create('../src/Documents'));
-$config->setDefaultDB('mongoshop');
 
 $dm = DocumentManager::create($client, $config);
-
 spl_autoload_register($config->getProxyManagerConfiguration()->getProxyAutoloader());
 
 
