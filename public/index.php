@@ -100,8 +100,8 @@ try {
         $twig->display("addcountry.html.twig", ["countries" => $countries]);
     });
 
-    $router->post("/addcountry", function () use ($twig) {
-        $addcountry = new AddCountry($twig);
+    $router->post("/addcountry", function () use ($twig, $dm) {
+        $addcountry = new AddCountry($twig, $dm);
         $addcountry->isValid();
     });
 
