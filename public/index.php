@@ -10,7 +10,7 @@ use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
 use Utilities\Utilities;
 use Exercises\AddCountry;
-use Exercises\Login;
+use Exercises\MongoCRUD;
 use Exercises\MyCart;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\ODM\MongoDB\Configuration;
@@ -24,14 +24,17 @@ $loader->add('Documents', __DIR__);
 AnnotationRegistry::registerLoader([$loader, 'loadClass']); //TODO change code to not depricated version
 
 $client = new Client('mongodb://mongo:27017', [], ['typeMap' => DocumentManager::CLIENT_TYPEMAP]);
+// $client = (new Client('mongodb://mongo:27017'))->test;
 $config = new Configuration();
 $config->setProxyDir('../proxies');
 $config->setProxyNamespace('Proxies');
 $config->setHydratorDir('../hydrators');
 $config->setHydratorNamespace('Hydrators');
 $config->setMetadataDriverImpl(AnnotationDriver::create('../src/Documents'));
+$config->setDefaultDB('test');
 
-$dm = DocumentManager::create($client, $config);
+//$dm = DocumentManager::create($client, $config);
+$dm = DocumentManager::create(null, $config);
 spl_autoload_register($config->getProxyManagerConfiguration()->getProxyAutoloader());
 
 
@@ -103,25 +106,15 @@ try {
         $addcountry->isValid();
     });
 
-    $router->get("/login", function () use ($twig) {
-        $twig->display("login.html.twig");
+    $router->get("/mongocrud", function () use ($twig) {
+        $twig->display("mongocrud.html.twig");
     });
 
-    $router->get("/logout", function () use ($twig) {
-        $_SESSION = [];
-        if (isset($_COOKIE[session_name()])) {
-            setcookie(session_name(), "", time() - 86400, "/");
-        }
-        session_destroy();
-        Router::redirectTo("/");
-    });
+    $router->post("/mongocrud", function () use ($twig) {
+        $mongocrud = new MongoCRUD($twig);
+        $mongocrud->isValid();    });
 
     $router->get("/mycart", function () use ($twig) {
-        if (!isset($_SESSION['isloggedin']) || $_SESSION['isloggedin'] !== Utilities::generateLoginHash()) {
-            // Use this method call to enable login protection for this page
-            $_SESSION['redirect'] = "/mycart";
-            Router::redirectTo("/login");
-        }
         $product = new MyCart($twig);
         $productCategory = $product->fillProductCategory();
         $twig->display("mycart.html.twig", ["productCategory" => $productCategory]);

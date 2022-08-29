@@ -1,11 +1,11 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Login{% endblock title %}
+{% block title %}CRUD Test{% endblock title %}
 {% block main %}
-    <h1>Login</h1>
+    <h1>CRUD Test</h1>
     <div class="border p-3 mt-5">
         {{ include('errors.html.twig') }}
-        <form method="post" action="{{ url_for("/login") }}">
+        <form method="post" action="{{ url_for("/mongocrud") }}">
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" value="{{ email }}"
@@ -19,7 +19,7 @@
                        required>
                 <div id="passwordHelp" class="form-text">Please enter your selected password.</div>
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary">Send</button>
         </form>
     </div>
 {% endblock main %}

@@ -112,19 +112,7 @@ final class AddCountry extends Country
     }
 
     /**
-     * Stores the data in the table onlineshop.user
-     *
-     * The field active stores a MD5-Hash to determine, that a two-phase authentication has not been finished yet.
-     * If active is set to NULL, when clicking a link with this hash sent via email, the user can log in.
-     *
-     * @see Login.php
-     * role has a default value (user) and can be left empty, if you allow only normal users to register via this form.
-     * date_registered can be omitted it is filled with CURRENT_TIMESTAMP(), to store the current timestamp.
-     * phone, mobile und fax are not required and can be null.
-     * All other fields are directly stored to the table onlineshop.user.
-     *
-     * To test, if a login with login.php works with the current data,
-     * set onlineshop.user.active to null with PHPMyAdmin
+     * Stores the data in the table onlineshop.country
      *
      * @return void Returns nothing
      */
