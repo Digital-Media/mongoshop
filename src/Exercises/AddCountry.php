@@ -44,10 +44,9 @@ final class AddCountry extends Country
      * Initializes Twig
      * Creates a database handler for the database connection.
      */
-    public function __construct($twig, $dm)
+    public function __construct($twig)
     {
         $this->twig=$twig;
-        $this->dm=$dm;
         $this->country= new Country();
     }
 
@@ -107,7 +106,6 @@ final class AddCountry extends Country
     public function fillCountry(): array
     {
         $result = [];
-        //$result = $this->dm->findAll(Country::class);
         return $result;
     }
 
