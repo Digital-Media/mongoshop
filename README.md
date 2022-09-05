@@ -1,4 +1,4 @@
-# Exercises with MongoDB using documents, search and MongoDB/Client and Doctrine
+# Exercises with MongoDB using documents, search, MongoDB/Client and Doctrine
 
 This repository provides Exercises for web development classes at the [Upper Austria University of Applied Sciences (FH Oberösterreich), Hagenberg Campus](https://www.fh-ooe.at/en/hagenberg-campus/).
 
