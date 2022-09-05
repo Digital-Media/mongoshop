@@ -8,8 +8,6 @@ See [fhooe-mongo-dock](https://github.com/Digital-Media/fhooe-mongo-dock)
 
 ## Get Repo
 
-If you use private repos built by [Upper Austria University of Applied Sciences (FH Oberösterreich), Hagenberg Campus](https://www.fh-ooe.at/en/hagenberg-campus/).
-
 ```shell
 docker exec -it mongoapp /bin/bash -c "cd /var/www/html && git clone https://github.com/Digital-Media/mongoshop.git"
 ```
