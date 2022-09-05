@@ -8,10 +8,12 @@ use Monolog\Logger;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
-use Utilities\Utilities;
-use Exercises\AddCountry;
+use Exercises\Countries;
 use Exercises\MongoCRUD;
+use Exercises\MongoDoctrine;
 use Exercises\MyCart;
+
+require_once('../vendor/autoload.php');
 
 session_start();
 
@@ -60,7 +62,7 @@ try {
     }
 
 // Set a base path if your code is not in your server's document root.
-    $router->setBasePath("/mongoshop/public");
+    $router->setBasePath("/mongoshop_solution/public");
 
 // Set a 404 callback that is executed when no route matches.
     $router->set404Callback(fn() => $twig->display("404.html.twig"));
@@ -70,34 +72,58 @@ try {
         $twig->display("index.html.twig");
     });
 
-    $router->get("/addcountry", function () use ($twig) {
-        $addcountry = new AddCountry($twig);
-        $countries = $addcountry->fillCountry();
-        $twig->display("addcountry.html.twig", ["countries" => $countries]);
-    });
-
-    $router->post("/addcountry", function () use ($twig) {
-        $addcountry = new AddCountry($twig);
-        $addcountry->isValid();
-    });
-
-    $router->get("/mongocrud", function () use ($twig) {
-        $twig->display("mongocrud.html.twig");
-    });
-
-    $router->post("/mongocrud", function () use ($twig) {
+    $router->get("/createuser", function () use ($twig) {
         $mongocrud = new MongoCRUD($twig);
-        $mongocrud->isValid();    });
+        $mongocrud->displayForm();
+    });
+
+    $router->get("/deleteuser", function () use ($twig) {
+        $mongocrud = new MongoCRUD($twig);
+        $mongocrud->deleteUser();
+    });
+
+    $router->get("/updateuser", function () use ($twig) {
+        $mongocrud = new MongoCRUD($twig);
+        $mongocrud->updateUser();
+    });
+
+    $router->post("/createuser", function () use ($twig) {
+        $mongocrud = new MongoCRUD($twig);
+        $mongocrud->insertUser();
+    });
+
+    $router->post("/updateuser", function () use ($twig) {
+        $mongocrud = new MongoCRUD($twig);
+        $mongocrud->updateUser();
+    });
+
+    $router->get("/mongodoctrine", function () use ($twig) {
+        $mongodoctrine = new MongoDoctrine($twig);
+        $mongodoctrine->displayForm();
+    });
+
+    $router->post("/mongodoctrine", function () use ($twig) {
+        $mongodoctrine = new MongoDoctrine($twig);
+        $mongodoctrine->insertUser();
+    });
+    $router->get("/createcountry", function () use ($twig) {
+        $countries = new Countries($twig);
+        $countries->displayForm();
+    });
+
+    $router->post("/createcountry", function () use ($twig) {
+        $countries = new Countries($twig);
+        $countries->insertCountry();
+    });
 
     $router->get("/mycart", function () use ($twig) {
-        $product = new MyCart($twig);
-        $productCategory = $product->fillProductCategory();
-        $twig->display("mycart.html.twig", ["productCategory" => $productCategory]);
+        $mycart = new MyCart($twig);
+        $mycart->displayForm();
     });
 
     $router->post("/mycart", function () use ($twig) {
-        $product = new MyCart($twig);
-        $product->isValid();
+        $mycart = new MyCart($twig);
+        $mycart->insertOrder();
     });
 
 // Run the router to get the party started.
