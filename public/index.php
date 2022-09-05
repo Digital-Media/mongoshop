@@ -62,7 +62,7 @@ try {
     }
 
 // Set a base path if your code is not in your server's document root.
-    $router->setBasePath("/mongoshop_solution/public");
+    $router->setBasePath("/mongoshop/public");
 
 // Set a 404 callback that is executed when no route matches.
     $router->set404Callback(fn() => $twig->display("404.html.twig"));
