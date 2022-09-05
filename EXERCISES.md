@@ -2,7 +2,7 @@
 
 ## Install Docker and create a MongoDB Atlas Account
 
-Install docker containers for MongoDB and the Mongo-Express Webinterface. See [Get Github-Repo](https://github.com/Digital-Media/hyp3ue_t2/blob/master/INSTALL.md#get-repo) and [Docker INSTALL](https://github.com/Digital-Media/hyp3ue_t2/blob/master/INSTALL.md#docker) for that.
+Install docker containers for MongoDB and the Mongo-Express Webinterface. See [Get Github-Repo](https://github.com/Digital-Media/mongoshop/blob/master/INSTALL.md#get-repo) and [Docker INSTALL](https://github.com/Digital-Media/mongoshop/blob/master/INSTALL.md#docker) for that.
 
 Create a cloud account for MongoDB Atlas. See [Cloud INSTALL](https://github.com/Digital-Media/hyp3ue_t2/blob/master/INSTALL.md#cloud) for that.
 Make yourself familiar with MongoDB Atlas, especially with `Database`, `Atlas Search`, `Browse Collections`. Look around and **don't accidentially delete data**, you will need later on. 
