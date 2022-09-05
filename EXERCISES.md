@@ -162,6 +162,6 @@ Finish [hyp3ue8_t2](#hyp3ue8_t2).
 
 ## hyp3ue10_t2
 
-Adapt the Example Doctrine to work with a collection `countries`. Use the Class `MyCart` as a starting point and add routes to `/public/index.php`.
+Adapt the Example Doctrine to work with a collection `orders`. Use the Class `MyCart` as a starting point and add routes to `/public/index.php`.
 See [Doctrine Tutorials](https://www.doctrine-project.org/projects/doctrine-orm/en/current/tutorials/getting-started.html) for details.
 Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete collections during testing.
