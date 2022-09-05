@@ -1,11 +1,11 @@
-# Exercises with the mongoshop repo
+# Exercises with MongoDB using documents, search and MongoDB/Client and Doctrine
 
 This repository provides Exercises for web development classes at the [Upper Austria University of Applied Sciences (FH Oberösterreich), Hagenberg Campus](https://www.fh-ooe.at/en/hagenberg-campus/).
 
 ## Installation
 
-See [INSTALL.md](https://github.com/Digital-Media/mongoshop/blob/main/INSTALL.md)
+See [INSTALL.md](https://github.com/Digital-Media/mongoshop/blob/main/INSTALL.md).
 
-## Exercises with Doctrine
+## Exercises
 
-https://www.doctrine-project.org/projects/doctrine-orm/en/current/tutorials/getting-started.html
+See [EXERCISES.md](https://github.com/Digital-Media/mongoshop/blob/main/EXERCISES.md).
