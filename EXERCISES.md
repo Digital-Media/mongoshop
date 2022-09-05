@@ -152,11 +152,16 @@ docker exec -it mongo /bin/bash -c mongo
 
 ## hyp3ue8_t2
 
+Adapt the Example CRUD to work with a collection `countries`. Use the Class `Countries` as a starting point and add routes to `/public/index.php`.
 See [MongoDB PHP Tutorials](https://www.mongodb.com/docs/php-library/current/tutorial/) for details.
-Use `db.users.drop();` to delete collection during testing.
+Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete collections during testing.
 
 ## hyp3ue9_t2
 
+Finish [hyp3ue8_t2](#hyp3ue8_t2).
+
 ## hyp3ue10_t2
 
-https://www.doctrine-project.org/projects/doctrine-orm/en/current/tutorials/getting-started.html
+Adapt the Example Doctrine to work with a collection `countries`. Use the Class `Countries` as a starting point and add routes to `/public/index.php`.
+See [Doctrine Tutorials](https://www.doctrine-project.org/projects/doctrine-orm/en/current/tutorials/getting-started.html) for details.
+Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete collections during testing.
