@@ -41,11 +41,14 @@
                         <tr>
                             <td> <a href="{{ url_for("/deleteuser") ~ "?uid=" ~ users[key]['_id'] }}"> Delete </a></td>
                             <td> <a href="{{ url_for("/updateuser") ~ "?uid=" ~ users[key]['_id'] }}"> Update </a></td>
+                            <td> &nbsp; {{ users[key]['name'] }} </td>
                             <td> &nbsp; {{ users[key]['email'] }} </td>
                         </tr>
                     {% else %}
                         <tr>
                             <td> No users found in search </td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
                             <td>&nbsp;</td>
                         </tr>
                     {% endfor %}
