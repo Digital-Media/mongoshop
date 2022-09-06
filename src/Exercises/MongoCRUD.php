@@ -185,8 +185,8 @@ final class MongoCRUD
     /**
      * Validates the user input
      *
-     * email and password are required fields.
-     * It checks if email is a valid email.
+     * email and name are required fields.
+     * Checks if email is a valid email.
      *
      * Error messages are stored in the array $messages[].
      *
