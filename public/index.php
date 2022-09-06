@@ -105,12 +105,12 @@ try {
         $mongocrud->updateUser();
     });
 
-    $router->get("/mongodoctrine", function () use ($twig) {
+    $router->get("/create_user", function () use ($twig) {
         $mongodoctrine = new MongoDoctrine($twig);
         $mongodoctrine->displayForm();
     });
 
-    $router->post("/mongodoctrine", function () use ($twig) {
+    $router->post("/create_user", function () use ($twig) {
         $mongodoctrine = new MongoDoctrine($twig);
         $mongodoctrine->insertUser();
     });

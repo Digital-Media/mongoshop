@@ -45,7 +45,7 @@ class MongoDoctrine
         spl_autoload_register($config->getProxyManagerConfiguration()->getProxyAutoloader());
     }
 
-    public function displayForm(string $route = "/mongodoctrine"): void
+    public function displayForm(string $route = "/create_user"): void
     {
         $this->twigParams['route'] = $route;
         $this->twigParams['users'] = $this->fillUsersArray();
