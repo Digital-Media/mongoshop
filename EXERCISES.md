@@ -167,4 +167,4 @@ See
 - [Doctrine MongoDB ODM Tutorials](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/index.html) for details.
 - [Basic Mapping](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/reference/basic-mapping.html#basic-mapping)
 - [Query Builder API](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/reference/query-builder-api.html#query-builder-api)
-Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete collections from the commandline during testing.
+Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete collections using the commandline during testing.
