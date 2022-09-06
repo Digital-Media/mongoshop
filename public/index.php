@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Doctrine\Common\Annotations\AnnotationRegistry;
 use Fhooe\Router\Router;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -13,7 +14,14 @@ use Exercises\MongoCRUD;
 use Exercises\MongoDoctrine;
 use Exercises\MyCart;
 
-require_once('../vendor/autoload.php');
+$loader = require_once('../vendor/autoload.php');
+
+$loader->add('Documents', __DIR__);
+/*
+ * This code is depricated, but still needed. If loader already exists it can be bypassed with the 'class_exists'.
+ * AnnotationRegistry::registerLoader('class_exists');
+ */
+AnnotationRegistry::registerLoader([$loader, 'loadClass']);
 
 session_start();
 
