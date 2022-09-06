@@ -6,21 +6,31 @@ namespace Documents;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
-/**  @Document */
-class Country
+/**  @ODM\Document(db="test", collection="users") */
+class User
 {
    /** @ODM\Id */
     private $id;
 
     /** @ODM\Field(type="string") */
-    private $name;
+    private $email;
 
     /** @ODM\Field(type="string") */
-    private $isocode;
+    private $name;
 
     public function getId(): ?string
     {
         return $this->id;
+    }
+
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
     }
 
     public function setName(string $name): void
@@ -28,17 +38,8 @@ class Country
         $this->name = $name;
     }
 
-    public function getName(): string
+    public function getEmail(): string
     {
-        return $this->name;
-    }
-    public function setISOcode(string $isocode): void
-    {
-        $this->isocode = $isocode;
-    }
-
-    public function getISOcode(): string
-    {
-        return $this->isocode;
+        return $this->email;
     }
 }
