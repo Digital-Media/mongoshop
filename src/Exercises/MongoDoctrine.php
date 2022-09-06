@@ -27,7 +27,7 @@ class MongoDoctrine
     {
 
         $client = new Client('mongodb://mongo:27017', [], ['typeMap' => DocumentManager::CLIENT_TYPEMAP]);
-        /* simple test for database connection
+        /* simple test for database connection to database test
         $database = $client->test;
         $cursor = $database->command(['ping' => 1]);
         var_dump($cursor->toArray()[0]);
