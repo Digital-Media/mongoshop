@@ -34,6 +34,7 @@
                 <tr>
                     <th>Delete</th>
                     <th>Update</th>
+                    <th>Username</th>
                     <th>User E-Mails</th>
                 </tr>
                 {% if users is defined %}
@@ -46,9 +47,9 @@
                         </tr>
                     {% else %}
                         <tr>
-                            <td> No users found in search </td>
+                            <td> </td>
                             <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td>&nbsp;No users found in search </td>
                             <td>&nbsp;</td>
                         </tr>
                     {% endfor %}
