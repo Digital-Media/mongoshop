@@ -163,5 +163,8 @@ Finish [hyp3ue8_t2](#hyp3ue8_t2).
 ## hyp3ue10_t2
 
 Adapt the Example Doctrine to work with a collection `orders`. Use the Class `MyCart` as a starting point and add routes to `/public/index.php`.
-See [Doctrine MongoDB ODM Tutorials](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/index.html) for details.
+See 
+- [Doctrine MongoDB ODM Tutorials](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/index.html) for details.
+- [Basic Mapping](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/reference/basic-mapping.html#basic-mapping)
+- [Query Builder API](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/reference/query-builder-api.html#query-builder-api)
 Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete collections from the commandline during testing.
