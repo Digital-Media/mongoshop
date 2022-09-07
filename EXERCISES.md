@@ -166,6 +166,10 @@ Adapt the Example Doctrine to work with a collection `orders`. Use the Class `My
 See 
 - [Doctrine MongoDB ODM Tutorials](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/index.html) for details.
 - [Basic Mapping](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/reference/basic-mapping.html#basic-mapping)
+- [Embed Many](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/reference/embedded-mapping.html#embed-many)
 - [Query Builder API](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/reference/query-builder-api.html#query-builder-api)
 - [Floating Point Guide](https://floating-point-gui.de/languages/php/)
+- For Subdocuments see [ArrayCollection](https://phpdox.net/demo/Symfony2/classes/Doctrine_Common_Collections_ArrayCollection.xhtml)
 - Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete collections using the commandline during testing.
+- Use `db.order.find().pretty();` to see if operations worked.
+- use input type "text" to test invalid quantity input using a letter. It's set to number, to enhance user experience.
