@@ -131,7 +131,7 @@ try {
 
     $router->post("/mycart", function () use ($twig) {
         $mycart = new MyCart($twig);
-        $mycart->insertOrder();
+        $mycart->business();
     });
 
 // Run the router to get the party started.
