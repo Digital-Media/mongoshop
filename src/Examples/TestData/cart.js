@@ -26,3 +26,4 @@ db.cart.insert([
         "quantity": 3,
     },
 ]);
+db.cart.find().pretty();
