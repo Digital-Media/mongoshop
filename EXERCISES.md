@@ -170,6 +170,10 @@ See
 - [Query Builder API](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/reference/query-builder-api.html#query-builder-api)
 - [Floating Point Guide](https://floating-point-gui.de/languages/php/)
 - For Subdocuments see [ArrayCollection](https://phpdox.net/demo/Symfony2/classes/Doctrine_Common_Collections_ArrayCollection.xhtml)
+- Use docker in commandline (Powershell or other terminal) to get access to MongoDB. See [INSTALL.md](https://github.com/Digital-Media/fhooe-mongo-dock/blob/main/INSTALL.md#docker) for that.
 - Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete collections using the commandline during testing.
 - Use `db.order.find().pretty();` to see if operations worked.
 - use input type "text" to test invalid quantity input using a letter. It's set to number, to enhance user experience.
+
+1. test connection uncommenting the section in `MyCart::__construct`
+2. 
