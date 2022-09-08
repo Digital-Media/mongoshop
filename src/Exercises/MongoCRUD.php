@@ -30,7 +30,7 @@ final class MongoCRUD
     private array $twigParams = [];
 
     /**
-     * @var object users provides a object a connection to mongodb.
+     * @var object connection provides a object for a connection to mongodb.
      */
     private object $connection;
 
@@ -73,6 +73,24 @@ final class MongoCRUD
     }
 
     /**
+     * Returns all emails of the collection test.users in an array.
+     *
+     * @return mixed Array that returns rows of test.users. false in case of error
+     */
+    private function fillUsersArray(): array
+    {
+        $users = $this->users->find(
+            [
+            ],
+            [
+                'projection' => [
+                    'email' => 1,
+                ]
+            ]);
+        return iterator_to_array($users);
+    }
+
+    /**
      * Validate and process user input, sent with a POST request.
      *
      * @return void Returns nothing
@@ -94,7 +112,10 @@ final class MongoCRUD
     }
 
     /**
-     * Process the user input, sent with a POST request
+     * Validate and process the user input, sent with a POST request
+     * First step is to call form with a GET request and provide data for given uid
+     * Second step is to send POST with changed data
+     * These steps are closely related and therefore handled within one method
      *
      * @return void Returns nothing
      */
@@ -121,26 +142,7 @@ final class MongoCRUD
                 $this->twigParams['name'] = $_POST['name'];
                 $this->displayForm("/updateuser");
             }
-
         }
-    }
-
-    /**
-     * Returns all emails of the collection test.users in an array.
-     *
-     * @return mixed Array that returns rows of test.users. false in case of error
-     */
-    private function fillUsersArray(): array
-    {
-        $users = $this->users->find(
-            [
-            ],
-            [
-                'projection' => [
-                    'email' => 1,
-                ]
-            ]);
-        return iterator_to_array($users);
     }
 
     /**
@@ -161,16 +163,16 @@ final class MongoCRUD
                     'name' => 1,
                 ]
             ]);
-        $result['userid'] = $user->_id;
+        $result['uid'] = $user->_id;
         $result['email'] = $user->email;
         $result['name'] = $user->name;
         return $result;
     }
 
     /**
-     * Deletes an user identified by his email from the collection test.users.
+     * Deletes an user identified by his uid from the collection test.users.
      *
-     * @return mixed Array that returns rows of onlineshop.product_category. false in case of error
+     * @return void Return nothing
      */
     public function deleteUser(): void
     {
@@ -178,7 +180,7 @@ final class MongoCRUD
             [
                 '_id' => new ObjectId($_GET['uid']),
             ]);
-        $this->twigParams['messages']['status'] = $deleteResult->getDeletedCount() . " document deleted";
+        $this->twigParams['messages']['status'] = $deleteResult->getDeletedCount() . " user deleted";
         $this->displayForm();
     }
 
