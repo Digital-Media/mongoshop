@@ -176,4 +176,4 @@ See
 - use input type "text" to test invalid quantity input using a letter. It's set to number, to enhance user experience.
 
 1. test connection uncommenting the section in `MyCart::__construct`
-2. 
+2. Read inline `//TODO`s to finish exercise
