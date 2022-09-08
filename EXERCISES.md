@@ -122,7 +122,7 @@ docker exec -it mongo /bin/bash -c mongo
 - Create a schema validation for a table `product` with keys `"name": string`, `"price": double`, `"sku": int` and `"active": boolean`.
 - During insert use 2 additional keys that are not required and validated.
 - Insert 3 documents with distinct additional keys.
-- Force an error on the boolean data type and document it.
+- Force an error on the boolean data type and document it in a .js file later uploaded on Moodle.
 
 ## hyp3ue7_t2
 

@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Product{% endblock title %}
+{% block title %}MyCart{% endblock title %}
 {% block main %}
     <h1>MyCart</h1>
     <div class="border p-3 mt-5">
@@ -21,7 +21,7 @@
                                 <td>{{ order_items[key]['product_name'] }}</td>
                                 <td>{{ order_items[key]['price'] }}</td>
                                 <td>
-                                    <input id="{{ order_items[key]['product_idproduct'] }}" type="number" name="quantity[{{ order_items[key]['product_idproduct'] }}]" min="0" max="10" value="{{ order_items[key]['quantity'] }}" class="input_qty"/>
+                                    <input id="{{ order_items[key]['pid'] }}" type="number" name="quantity[{{ order_items[key]['pid'] }}]" min="0" max="10" value="{{ order_items[key]['quantity'] }}" class="input_qty"/>
                                 </td>
                             </tr>
                         {% else %}
@@ -37,8 +37,8 @@
             </div>
             {% if not(order_items is empty) %}
                 <div id="submitbuttons" class="Grid-full">
-                    <input id="update" type="submit" class="Button" name="update" value="Update Cart" />
-                    <input id="checkout" type="submit" class="Button" name="checkout" value="Go To Checkout" />
+                    <input id="update" type="submit" class="Button" name="update" value="Change Quantity" />
+                    <input id="checkout" type="submit" class="Button" name="checkout" value="Buy now" />
                 </div>
             {% endif %}
         </form>
