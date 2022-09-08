@@ -176,4 +176,5 @@ See
 - use input type "text" to test invalid quantity input using a letter. It's set to number, to enhance user experience.
 
 1. test connection uncommenting the section in `MyCart::__construct`
-2. Read inline `//TODO`s to finish exercise
+2. create test entries in MongoDB with `/src/Examples/TestDataDoctrine/cart.js`.
+3. Read inline `//TODO`s to finish exercise
