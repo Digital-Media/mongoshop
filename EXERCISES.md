@@ -156,6 +156,10 @@ Adapt the Example CRUD to work with a collection `countries`. Use the Class `Cou
 See [MongoDB PHP Tutorials](https://www.mongodb.com/docs/php-library/current/tutorial/) for details.
 Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete collections  from the commandline during testing.
 
+1. test connection uncommenting the section in `Countries::__construct`
+2. create test entries in MongoDB with `/src/Examples/TestData/country.js`.
+3. Read inline `//TODO`s to finish exercise
+
 ## hyp3ue9_t2
 
 Finish [hyp3ue8_t2](#hyp3ue8_t2).
@@ -176,5 +180,5 @@ See
 - use input type "text" to test invalid quantity input using a letter. It's set to number, to enhance user experience.
 
 1. test connection uncommenting the section in `MyCart::__construct`
-2. create test entries in MongoDB with `/src/Examples/TestDataDoctrine/cart.js`.
+2. create test entries in MongoDB with `/src/Examples/TestData/cart.js`.
 3. Read inline `//TODO`s to finish exercise
