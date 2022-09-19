@@ -246,6 +246,53 @@ EXPLAIN: {
 
 ANALYZE shows that 39.2 seconds were spent in the subquery, which was executed 150K times (for every row of outer table).
 
+DROP TABLE restaurantlike;
+CREATE TABLE restaurantlike
+(
+    id bigint,
+    name varchar(255),
+    menu varchar(255),
+    search_tags varchar(255)
+);
+
+INSERT INTO restaurantlike
+(id,
+ name,
+ menu,
+ search_tags)
+VALUES
+    (1,
+     'My favorite restaurant',
+     'Very long list of tasty food and drinks ....',
+     'no-smoking, vegetarian, vegan, wifi');
+
+CREATE INDEX menu_tags_like
+    ON restaurantlike (menu, search_tags);
+
+SELECT
+    id,
+    name,
+    menu,
+    search_tags
+FROM restaurantlike
+WHERE menu LIKE '%burger%'
+   OR menu LIKE '%special%'
+   OR (search_tags LIKE '%vegan%' AND search_tags LIKE '%wifi%');
+
+EXPLAIN SELECT
+              id,
+              name,
+              menu,
+              search_tags
+        FROM restaurantlike
+        WHERE menu LIKE '%burger%'
+           OR menu LIKE '%special%'
+           OR (search_tags LIKE '%vegan%' AND search_tags LIKE '%wifi%');
+
+
+-- Result:
+-- id  select_type table           type possible_keys key  key_len ref     rows Extra
+-- 1   SIMPLE	   restaurantlike  ALL	NULL	      NULL NULL	   NULL	   1    Using where
 
 
 
