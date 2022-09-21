@@ -39,7 +39,7 @@ Add more indexes to collection product for keys that are relevant for queries. A
 
 # hyp3ue3_t2
 
-Finish [hyp2ue4_t2](#hyp3ue2_t2).
+Finish [hyp2ue2_t2](#hyp3ue2_t2).
 
 # hyp3ue4_t2
 
@@ -126,7 +126,7 @@ docker exec -it mongo /bin/bash -c mongo
 
 ## hyp3ue7_t2
 
-### Working with the sample.supplies.sales data set
+### Working with Aggregation Pipeline and the sample.supplies.sales data set
 
 - Connect to MongoDB Atlas
 - Go to Aggregation Tab
@@ -152,6 +152,8 @@ docker exec -it mongo /bin/bash -c mongo
 
 ## hyp3ue8_t2
 
+### Working with the PHP MongoDB Client
+
 Adapt the Example CRUD to work with a collection `countries`. Use the Class `Countries` as a starting point and add routes to `/public/index.php`.
 See [MongoDB PHP Tutorials](https://www.mongodb.com/docs/php-library/current/tutorial/) for details.
 Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete collections  from the commandline during testing.
@@ -165,6 +167,8 @@ Use `db.users.drop();`, `db.countries.drop();` or `db.orders.drop();` to delete 
 Finish [hyp3ue8_t2](#hyp3ue8_t2).
 
 ## hyp3ue10_t2
+
+### Working with the doctrine Framework to access MongoDB from PHP
 
 Adapt the Example Doctrine to work with a collection `orders`. Use the Class `MyCart` as a starting point and add routes to `/public/index.php`.
 See 
