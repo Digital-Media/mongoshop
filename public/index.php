@@ -114,6 +114,17 @@ try {
         $mongodoctrine = new MongoDoctrine($twig);
         $mongodoctrine->insertUser();
     });
+
+    $router->get("/update_user", function () use ($twig) {
+        $mongodoctrine = new MongoDoctrine($twig);
+        $mongodoctrine->updateUser();
+    });
+
+    $router->get("/delete_user", function () use ($twig) {
+        $mongodoctrine = new MongoDoctrine($twig);
+        $mongodoctrine->deleteUser();
+    });
+
     $router->get("/createcountry", function () use ($twig) {
         $countries = new Countries($twig);
         $countries->displayForm();

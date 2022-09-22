@@ -5,6 +5,7 @@ namespace Exercises;
 use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
+use MongoDB\BSON\ObjectId;
 use MongoDB\Client;
 use Utilities\Utilities;
 use Documents\User;
@@ -143,4 +144,32 @@ class MongoDoctrine
         }
     }
 
+    /**
+     * Validate and process user input, sent with a POST request.
+     *
+     * @return void Returns nothing
+     */
+    public function updateUser(): void
+    {
+        //TODO display data sent by a GET request and update them with a POST request
+        //TODO See MongoCRUD example for this
+        $user = $this->dm->find(User::class, new ObjectId('631708a4a5bdfee38b073aea'));
+        $user->setEmail('findandupdate@mongoshop.at');
+        $user->setName('who cares?');
+        $this->dm->persist($user);
+        $this->dm->flush();
+    }
+
+    /**
+     * Delete user, sent with a GET request.
+     *
+     * @return void Returns nothing
+     */
+    public function deleteUser(): void
+    {
+        //TODO use _id sent bei GET-request
+        $user = $this->dm->find(User::class, new ObjectId('631708a4a5bdfee38b073aea'));
+        $this->dm->remove($user);
+        $this->dm->flush();
+    }
 }
