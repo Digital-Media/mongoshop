@@ -170,6 +170,12 @@ Finish [hyp3ue8_t2](#hyp3ue8_t2).
 
 ### Working with the doctrine Framework to access MongoDB from PHP
 
+1. *Make yourself familiar with Doctrine*
+
+Look at the TODOs in /src/MongoDoctrine and finish deleteUser() and updateUser().
+
+2. *Finish a more complex example*
+
 Adapt the Example Doctrine to work with a collection `orders`. Use the Class `MyCart` as a starting point and add routes to `/public/index.php`.
 See 
 - [Doctrine MongoDB ODM Tutorials](https://www.doctrine-project.org/projects/doctrine-mongodb-odm/en/2.3/index.html) for details.
