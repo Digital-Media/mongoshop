@@ -9,7 +9,7 @@ For installation of Docker environment see [fhooe-mongo-dock](https://github.com
 ## Get Repo
 
 ```shell
-docker exec -it mongoapp /bin/bash -c "cd /var/www/html && git clone https://github.com/Digital-Media/mongoshop.git"
+docker exec -it mongoapp /bin/bash -c "cd /var/www/html && git clone https://github.com/Digital-Media/mongoshop.git && chmod 777 mongoshop"
 ```
 ```shell
 docker exec -it mongoapp /bin/bash -c "cd /var/www/html/mongoshop && composer install && chmod -R 777 *"
