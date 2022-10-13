@@ -23,6 +23,7 @@ Have a look at the data sets with MongoDB Charts.
 - Click `Database` and then `Browse Collections`.
 
 Never use capped collections or time series.
+See [Blog Example](https://github.com/Digital-Media/mongoshop/blob/main/src/Examples/document/blog.js) for an first full example for embedding and using arrays
 
 - Click `Create Database` and add database `onlineshop` and a first collection `user`.
 - To add more collections hover over database `onlineshop` and click the plus sign next to it.
