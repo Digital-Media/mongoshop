@@ -28,7 +28,7 @@ See [Blog Example](https://github.com/Digital-Media/mongoshop/blob/main/src/Exam
 - Click `Create Database` and add database `onlineshop` and a first collection `user`.
 - To add more collections hover over database `onlineshop` and click the plus sign next to it.
 - Click on `INSERT DOCUMENT` to add documents to a collection.
-- Add user with optional phone numbers, product with optional floor, orders with billing address, delivery address, order_items and payment_details to the data model.
+- Add user with optional phone numbers, product with optional description, orders with billing address, delivery address, order_items and payment_details to the data model.
 - Do not add the ObjectId explicitly, that is done implicitly by MongoDB.
 
 Change the ER data model of [onlineshop](https://github.com/Digital-Media/fhooe-web-dock/blob/main/src/onlineshop.sql) to a document based model.
