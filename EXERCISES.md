@@ -78,7 +78,9 @@ You can find examples [HERE](https://www.mongodb.com/docs/atlas/atlas-search/def
 See [GeoPoint Documentation](https://www.mongodb.com/docs/atlas/atlas-search/near/#std-label-near-ref) for more information.
 Maybe review the documentation for defining field mappings again.
 
-- Create an index on shipwrecks.
+- Create a search index on shipwrecks in sample_geospatial with the button "Search Indexes" on the right tab.
+- Click the "Create Index" button and use either the visual editor or the JSON-Editor to do so.
+- To start a query press the button "Query" in the list of "Search Indexes"
 - Type **visible** into the search field.
 - Press the Search button.
 - Press "Edit Query Syntax"
