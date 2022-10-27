@@ -1,6 +1,6 @@
-db = db.getSiblingDB('test');
+db = db.getSiblingDB('onlineshop');
 db.dropDatabase();
-db = db.getSiblingDB('test');
+db = db.getSiblingDB('onlineshop');
 /*
 Copy the JSON from ATLAS Cloud, if you want to test your code there first.
 
