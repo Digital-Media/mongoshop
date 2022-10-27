@@ -54,7 +54,7 @@ the accompaning [Explain Video](https://www.mongodb.com/developer/products/atlas
 Work with the [MongoDB Atlas Search Tester UI](https://www.mongodb.com/docs/atlas/atlas-search/search-ui/#std-label-atlas-search-query-ui)
 
 Copy commands you write to a file with an appropriate name and extension .js to upload it in Moodle.
-Write comment lines with `//` and number the examples (`// 1` and so on) to document what the query is about.
+Write comment lines with `//` and number the examples (`// 1` and so on) or use the headlines to document what the query is about.
 Use the Visual Editor for your first attempts and the JSON Editor to adapt the examples. 
 
 ### Working with the mflix-dataset
