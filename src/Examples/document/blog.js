@@ -2,7 +2,7 @@ db = db.getSiblingDB('blog');
 db.dropDatabase();
 db = db.getSiblingDB('blog');
 // Collection blog mit eingebetteten comments
-db.embedded_blog.insert([
+db.embedded_blog.insertOne([
 {
 "_id": "Erster Post",
 "author": "John",
@@ -39,7 +39,7 @@ db.embedded_blog.insert([
 db.embedded_blog.find( { "comments.author" : "Bob" }, { "comments" : 1 }).pretty();
 
 // Normalized Schema
-db.normalized_blog.insert([
+db.normalized_blog.insertOne([
 {
 "_id" : "Erster Post",
 "author" : "John",
@@ -51,7 +51,7 @@ db.normalized_blog.insert([
 "text" : "Schreibt mir mal was in die Kommentarzeile"
 }
 ]);
-db.normalized_comments.insert([
+db.normalized_comments.insertOne([
 {
    "post_id" : "First Post",
    "author" : "Jane",
