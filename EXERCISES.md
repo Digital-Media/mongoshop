@@ -23,7 +23,7 @@ Have a look at the data sets with MongoDB Charts.
 - Click `Database` and then `Browse Collections`.
 
 Never use capped collections or time series.
-See [Blog Example](https://github.com/Digital-Media/mongoshop/blob/main/src/Examples/document/blog.js) for an first full example for embedding and using arrays
+See [Blog Example](https://github.com/Digital-Media/mongoshop/blob/main/src/Examples/document/blog.js) for a first full example for embedding and using arrays and subcollections (Objects)
 
 - Click `Create Database` and add database `onlineshop` and a first collection `user`.
 - To add more collections hover over database `onlineshop` and click the plus sign next to it.
@@ -38,6 +38,9 @@ Add more indexes to collection product for keys that are relevant for queries. A
 !! Use `"date_registered": { "$toDate": "2014-07-08T10:43:33.522Z" }` dates if you use JSON-Editor `{}`.
 
 !! Use data type `Object` for sub-documents.
+
+Create a file with an appropriate name and the extension .js. Copy your JSON from MongoDB-Atlas to it and modify it in the specified way.
+See the [example ue2.js](https://github.com/Digital-Media/mongoshop/blob/main/src/Examples/document/ue2.js)  to get the format for the upload to Moodle.
 
 # hyp3ue3_t2
 
