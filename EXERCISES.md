@@ -57,7 +57,7 @@ the accompaning [Explain Video](https://www.mongodb.com/developer/products/atlas
 Work with the [MongoDB Atlas Search Tester UI](https://www.mongodb.com/docs/atlas/atlas-search/search-ui/#std-label-atlas-search-query-ui)
 
 Copy commands you write to a file with an appropriate name and extension .js to upload it in Moodle.
-Write comment lines with `//` and number the examples (`// 1` and so on) or use the headlines to document what the query is about.
+Write comment lines with `//` and number the examples (`// Fulltext Search with MongoDB Atlas` and so on) or use the comments to document what the query is about.
 Use the Visual Editor for your first attempts and the JSON Editor to adapt the examples. 
 
 ### Working with the mflix-dataset
@@ -74,12 +74,13 @@ You can find examples [HERE](https://www.mongodb.com/docs/atlas/atlas-search/def
   }
 }
 ```
-- Copy the query (`// 1`) to your .js file.
+- Copy the query (with a comment as headline `// Working with the mflix-dataset`) to your .js file.
 
 ### Working with the shipwrecks dataset
 
 See [GeoPoint Documentation](https://www.mongodb.com/docs/atlas/atlas-search/near/#std-label-near-ref) for more information.
 Maybe review the documentation for defining field mappings again.
+
 
 - Create a search index on shipwrecks in sample_geospatial with the button "Search Indexes" on the right tab.
 - Click the "Create Index" button and use either the visual editor or the JSON-Editor to do so.
@@ -91,10 +92,12 @@ Maybe review the documentation for defining field mappings again.
 - Edit the query in a way, that the search is done for documents containing **visible** **AND/OR** **submerged**
 - Copy the new query to your .js file.
 
-- Change one entry of shipwrecks and change it in a way, that geo queries are possible.
-- Use the existing `array` `coordinates` and convert it to a `location` `Object` with `type: "Point"` that includes the `array` `coordinates`.
+- Change one entry of shipwrecks and change it in a way, that geo queries are possible on an Object `location`.
+- Use the existing array `coordinates` and surround it with a `location` `Object` that contains `type: "Point"` and the array `coordinates: [ ... , ... ]`.
 - Then convert 4 more documents in the same way.
-- Build a query to find a shipwreck based on coordinates.
+- Create a search index on shipwrecks in sample_geospatial with the button "Search Indexes" on the right tab containing.
+- Define an index containing the fields location of type geo, feature_type and watlev of type string.
+- Write a geo search query based on this index with `"next"` on `"path": "location"` and further required keys.
 
 A documentation for all geospatial queries you can find [HERE](https://www.mongodb.com/docs/manual/geospatial-queries/)
 Build more examples according to the [Search Tutorials](https://www.mongodb.com/docs/atlas/atlas-search/tutorials/) for additional points.
