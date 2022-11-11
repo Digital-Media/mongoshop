@@ -84,9 +84,11 @@ Maybe review the documentation for defining field mappings again.
 - Change one entry of shipwrecks and change it in a way, that geo queries are possible on an Object `location`.
 - Use the existing array `coordinates` and surround it with a `location` `Object` that contains `type: "Point"` and the array `coordinates: [ ... , ... ]`.
 - Then convert 4 more documents in the same way.
-- Create a search index on shipwrecks in sample_geospatial with the button "Search Indexes" on the right tab containing.
+- Copy one of these documents to your .js file.
+- Create a search index on shipwrecks in sample_geospatial with the button "Search Indexes" on the most right tab.
 - Click the "Create Index" button and use either the visual editor or the JSON-Editor to do so.
 - Define an index containing the fields location of type geo, feature_type and watlev of type string.
+- Copy the index definition to your .js file.
 - To start a query press the button "Query" in the list of "Search Indexes"
 - Type **visible** into the search field.
 - Press the Search button.
@@ -94,9 +96,8 @@ Maybe review the documentation for defining field mappings again.
 - Copy the original query to your .js file.
 - Edit the query in a way, that the search is done for documents containing **visible** **AND/OR** **submerged**
 - Copy the new query to your .js file.
-
-
 - Write a geo search query based on this index with `"next"` on `"path": "location"` and further required keys.
+- Copy query to your .js file.
 
 A documentation for all geospatial queries you can find [HERE](https://www.mongodb.com/docs/manual/geospatial-queries/)
 Build more examples according to the [Search Tutorials](https://www.mongodb.com/docs/atlas/atlas-search/tutorials/) for additional points.
