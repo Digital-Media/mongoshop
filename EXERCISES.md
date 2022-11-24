@@ -162,7 +162,6 @@ docker exec -it mongodb /bin/bash -c mongosh
 - Go to the sample_restaurants.restaurants data set
 - Group the result bei borough and count the number of restaurants:
 - Reduce the result depending on a search term and a geolocation Point with a free chosen distance.
-- to get additional points
 
 ## hyp3ue8_t2
 
