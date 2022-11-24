@@ -1,3 +1,4 @@
+``` script
 db.createCollection("students", {
 validator: {
 $jsonSchema: {
@@ -40,3 +41,4 @@ description: "must be a string and is required"
 }
 }
 })
+```
