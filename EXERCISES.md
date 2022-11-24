@@ -119,7 +119,7 @@ To bring a partial schema and central input validation (constraints) to mongodb 
 - Open Powershell or other terminal.
 - Connect to mongodb client
 ```
-docker exec -it mongo /bin/bash -c mongo
+docker exec -it mongo /bin/bash -c mongosh
 ```
 - `use test`
 - Submit the provided `students` [example](https://www.mongodb.com/docs/manual/core/schema-validation/specify-json-schema/#std-label-schema-validation-json).
