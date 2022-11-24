@@ -121,7 +121,8 @@ To bring a partial schema and central input validation (constraints) to mongodb 
 ```
 docker exec -it mongo /bin/bash -c mongosh
 ```
-- `use test`
+- `use test;` if you are not already in this database
+- `show collections;` to see, if any collection is already stored.
 - Submit the provided `students` [example](https://github.com/Digital-Media/mongoshop/blob/main/src/Examples/SchemaValidation/students.json)
 - it's based on a MongoDB example in the [MongoDB Documentation](https://www.mongodb.com/docs/manual/core/schema-validation/specify-json-schema/#std-label-schema-validation-json).
 - Insert 2 documents into `students`.
