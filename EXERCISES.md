@@ -133,7 +133,7 @@ docker exec -it mongodb /bin/bash -c mongosh
 - Force validation errors for required major, year not in valid range and gpa is not a double and document them.
 
 - Create a schema validation for a table `product` with required keys `"name": string`, `"price": double`, `"sku": int` and `"active": boolean`.
-- During insert use 2 additional keys that are not required and validated.
+- During insert use 2 additional keys that are not required and validated (in case you need not mention them in the validator).
 - Insert 3 documents with distinct additional keys.
 - Force an error on the boolean data type and document it in a .js file later uploaded on Moodle.
 
