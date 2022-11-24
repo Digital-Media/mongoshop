@@ -124,6 +124,7 @@ docker exec -it mongodb /bin/bash -c mongosh
 - `use test;` if you are not already in this database
 - `show collections;` to see, if any collection is already stored.
 - `db.getCollectionInfos( { name: "students" } )[0].options.validator` to see the validation rules.
+- Document each statement with its response to a file with extension .json or .js or .txt.
 - Submit the provided `students` [example](https://github.com/Digital-Media/mongoshop/blob/main/src/Examples/SchemaValidation/students.json)
 - it's based on a MongoDB example in the [MongoDB Documentation](https://www.mongodb.com/docs/manual/core/schema-validation/specify-json-schema/#std-label-schema-validation-json).
 - Insert 2 documents into `students`.
@@ -135,7 +136,7 @@ docker exec -it mongodb /bin/bash -c mongosh
 - Create a schema validation for a table `product` with required keys `"name": string`, `"price": double`, `"sku": int` and `"active": boolean`.
 - Insert 3 documents.
 - During insert use 2 additional keys that are not required and validated (in case you need not mention them in the validator).
-- Force an error on the boolean data type and document it in a .js file later uploaded on Moodle.
+- Force an error on the boolean data type.
 
 ## hyp3ue7_t2
 
