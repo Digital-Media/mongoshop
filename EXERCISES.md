@@ -121,9 +121,11 @@ To bring a partial schema and central input validation (constraints) to mongodb 
 ```
 docker exec -it mongodb /bin/bash -c mongosh
 ```
+## Useful statements
 - `use test;` if you are not already in this database
 - `show collections;` to see, if any collection is already stored.
-- `db.getCollectionInfos( { name: "students" } )[0].options.validator` to see the validation rules.
+- `db.getCollectionInfos( { name: "students" } )[0].options.validator` to see the validation rules for already existing collections.
+## Exercise
 - Document each statement with its response to a file with extension .json or .js or .txt.
 - Submit the provided `students` [example](https://github.com/Digital-Media/mongoshop/blob/main/src/Examples/SchemaValidation/students.md)
 - it's based on a MongoDB example in the [MongoDB Documentation](https://www.mongodb.com/docs/manual/core/schema-validation/specify-json-schema/#std-label-schema-validation-json).
