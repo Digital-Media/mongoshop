@@ -135,7 +135,7 @@ docker exec -it mongodb /bin/bash -c mongosh
 
 - Create a schema validation for a table `product` with required keys `"name": string`, `"price": double`, `"sku": int` and `"active": boolean`.
 - Insert 3 documents.
-- During insert use 2 additional keys that are not required and validated (in case you need not mention them in the validator).
+- During insert use 2 additional keys that are not required and validated (in this case you need not mention them in the validator).
 - Force an error on the boolean data type.
 
 ## hyp3ue7_t2
