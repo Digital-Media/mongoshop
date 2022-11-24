@@ -131,7 +131,7 @@ docker exec -it mongodb /bin/bash -c mongosh
 - Find out, how to insert integer values.
 - 1st document without key street
 - 2nd document with key street. 
-- Force validation errors for required major, year not in valid range and gpa is not a double and document them.
+- Force validation errors for required major, year not in valid range and gpa is not a double and document them with further inserts.
 
 - Create a schema validation for a table `product` with required keys `"name": string`, `"price": double`, `"sku": int` and `"active": boolean`.
 - Insert 3 documents.
