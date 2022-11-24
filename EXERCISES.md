@@ -133,7 +133,7 @@ docker exec -it mongodb /bin/bash -c mongosh
 - 2nd document with key street. 
 - Insert documents, that cause validation errors for required major, year not in valid range and gpa is not a double and document them with further inserts.
 
-- Create a schema validation for a table `product` with required keys `"name": string`, `"price": double`, `"sku": int` and `"active": boolean`.
+- Create a schema validation for a table `product` with required keys `"name": string`, `"price": double`, `"sku": int` and `"active": bool`.
 - Insert 3 documents.
 - During insert use 2 additional keys that are not required and validated (in this case you need not mention them in the validator).
 - Insert a document, that causes an error on the boolean data type of active.
