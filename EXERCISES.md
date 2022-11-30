@@ -144,23 +144,30 @@ docker exec -it mongodb /bin/bash -c mongosh
 
 ### Working with Aggregation Pipeline and the sample.supplies.sales data set
 
+See [MongoDB Aggregation Docs](https://www.mongodb.com/docs/manual/aggregation/) for more Information.
+
+**1. Example**
 - Connect to MongoDB Atlas
+- Use Collection sample_supplies.sales
 - Go to Aggregation Tab
-- Add $match stage to reduce the documents to storeLocation "New York"
+- Add $match stage to reduce the documents to storeLocation = "New York"
 - Add a $count stage to find out how many items where sold in New York.
 - Store the result in a collection with a $out stage.
 - Export pipeline to Phyton with import and driver syntax.
 - Copy result to a file with an appropriate name and extension .js.
 
+**2. Example**
+- Use Collection sample_supplies.sales again
 - Go to Aggregation Tab
-- Add $match stage to reduce the documents to storeLocation "New York"
+- Add $match stage to reduce the documents to storeLocation = "New York"
 - Add a $unwind stage to unwind items for a $group stage
-- Add a group stage and build sum of the multiply of items.price and items.quantity
+- Add a group stage and build sum of the multiply of items.price and items.quantity grouped by items.name
 - Store the result in a collection with a $out stage.
 - Export pipeline code to Phyton with import and driver syntax.
 - Append the copied result to the file created above.
 - Upload file to Moodle.
 
+**3. For additional 4 points for HYP3VO (optional)**
 - Go to the sample_restaurants.restaurants data set
 - Group the result bei borough and count the number of restaurants:
 - Reduce the result depending on a search term and a geolocation Point with a free chosen distance.
