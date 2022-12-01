@@ -151,7 +151,7 @@ See [MongoDB Aggregation Docs](https://www.mongodb.com/docs/manual/aggregation/)
 - Use Collection sample_supplies.sales
 - Go to Aggregation Tab
 - Add $match stage to reduce the documents to storeLocation = "New York"
-- Add a $count stage to find out how many items where sold in New York.
+- Add a $count stage to find out how many stores are in New York.
 - Store the result in a collection with a $out stage.
 - Export pipeline to Phyton Language.
 - Copy result to a file with an appropriate name and extension .js.
