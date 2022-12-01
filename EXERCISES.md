@@ -153,7 +153,7 @@ See [MongoDB Aggregation Docs](https://www.mongodb.com/docs/manual/aggregation/)
 - Add $match stage to reduce the documents to storeLocation = "New York"
 - Add a $count stage to find out how many items where sold in New York.
 - Store the result in a collection with a $out stage.
-- Export pipeline to Phyton with import and driver syntax.
+- Export pipeline to Phyton Language.
 - Copy result to a file with an appropriate name and extension .js.
 
 **2. Example**
@@ -163,7 +163,7 @@ See [MongoDB Aggregation Docs](https://www.mongodb.com/docs/manual/aggregation/)
 - Add a $unwind stage to unwind items for a $group stage
 - Add a group stage and build sum of the multiply of items.price and items.quantity grouped by items.name
 - Store the result in a collection with a $out stage.
-- Export pipeline code to Phyton with import and driver syntax.
+- Export pipeline code to Phyton Language.
 - Append the copied result to the file created above.
 - Upload file to Moodle.
 
