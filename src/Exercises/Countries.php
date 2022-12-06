@@ -115,9 +115,9 @@ final class Countries
     }
 
     /**
-     * Returns all keys of the collection test.users in an array.
+     * Returns keys needed for update form of the collection test.countries in an array.
      *
-     * @return mixed Array that returns rows of test.users. false in case of error
+     * @return mixed Array that returns rows of test.countries. false in case of error
      */
     private function getCountryFields(): array
     {
