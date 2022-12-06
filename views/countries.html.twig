@@ -1,8 +1,8 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Countries{% endblock title %}
+{% block title %}Country{% endblock title %}
 {% block main %}
-    <h1>Countries</h1>
+    <h1>Country Data</h1>
     <div class="border p-3 mt-5">
         {{ include('errors.html.twig') }}
         <form method="post" action="{{ url_for("/createcountry") }}">
