@@ -32,8 +32,8 @@
             {% if countries is defined %}
                 {% for key, value in countries %}
                     <tr>
-                        <td> {{ countries[key]['name'] }} </td>
-                        <td> {{ countries[key]['ISOcode'] }} </td>
+                        <td> {{ countries[key]['country'] }} </td>
+                        <td> {{ countries[key]['isocode'] }} </td>
                     </tr>
                 {% else %}
                     <tr>
