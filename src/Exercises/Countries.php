@@ -72,9 +72,9 @@ final class Countries
     }
 
     /**
-     * Returns all entries of the table onlineshop.product_category in an array.
+     * Returns all entries of the collection test.countries in an array.
      *
-     * @return mixed Array that returns rows of onlineshop.product_category. false in case of error
+     * @return mixed Array with rows of collection test.countries. false in case of error
      */
     private function fillCountryArray(): array
     {
@@ -142,7 +142,7 @@ final class Countries
     /**
      * Validates the user input
      *
-     * name of country and ISOcode are validated with a regex. You can use Utilities::isString() to do so.
+     * name of country and isocode are validated with a regex. You can use Utilities::isString() to do so.
      *
      * Error messages are stored in the array $messages[].
      *
