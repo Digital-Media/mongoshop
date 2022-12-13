@@ -194,7 +194,7 @@ Finish [hyp3ue8_t2](#hyp3ue8_t2).
 
 1. *Make yourself familiar with Doctrine*
 
-Look at the TODOs in /src/MongoDoctrine and finish deleteUser() and updateUser().
+Look at the TODOs in /src/MongoDoctrine and finish fillUsersArray(), deleteUser() and updateUser().
 
 2. *Finish a more complex example*
 
