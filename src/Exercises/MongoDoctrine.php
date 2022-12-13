@@ -75,7 +75,7 @@ class MongoDoctrine
      */
     public function fillUsersArray(): array
     {
-
+        //TODO Add '_id' to select and the $users[] array.
         $result = $this->dm->createQueryBuilder(User::class)
             ->select('email', 'name')
             ->hydrate(false) // return an array instead of an object
@@ -84,7 +84,7 @@ class MongoDoctrine
         foreach ($result as $key => $value) {
             $users[]= ['email' => $value['email'],'name' => $value['name']];
         }
-        // $users[]= ['email' => 'shopuser1@mongoshop.at', 'name' => 'Shop User1'];
+        // $users[]= ['_id' => 'asdfasdfadsfasdf', 'email' => 'shopuser1@mongoshop.at', 'name' => 'Shop User1'];
         if (isset($users)) {
             return $users;
         } else {
