@@ -1,6 +1,7 @@
 <?php
 namespace Exercises;
 
+use Fhooe\Router\Router;
 use Utilities\Utilities;
 use MongoDB\Client;
 use MongoDB\BSON\ObjectId;
@@ -67,6 +68,9 @@ final class MongoCRUD
 
     public function displayForm(string $route = "/createuser"): void
     {
+        if (isset ($_GET['status'])) {
+            $this->twigParams['messages']['status'] = $_GET['status'];
+        }
         $this->twigParams['route'] = $route;
         $this->twigParams['users'] = $this->fillUsersArray();
         $this->twig->display("mongocrud.html.twig", $this->twigParams);
@@ -180,8 +184,7 @@ final class MongoCRUD
             [
                 '_id' => new ObjectId($_GET['uid']),
             ]);
-        $this->twigParams['messages']['status'] = $deleteResult->getDeletedCount() . " user deleted";
-        $this->displayForm();
+        Router::redirect(Router::getBasePath() . "/createuser", ["status" => $deleteResult->getDeletedCount() . " user deleted"]);
     }
 
     /**
