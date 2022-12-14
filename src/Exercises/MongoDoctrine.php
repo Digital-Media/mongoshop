@@ -154,10 +154,11 @@ class MongoDoctrine
         //TODO display data sent by a GET request and update them with a POST request
         //TODO See MongoCRUD example for this
         $user = $this->dm->find(User::class, new ObjectId('631708a4a5bdfee38b073aea'));
-        $user->setEmail('findandupdate@mongoshop.at');
-        $user->setName('who cares?');
-        $this->dm->persist($user);
-        $this->dm->flush();
+        //$user->setEmail('findandupdate@mongoshop.at');
+        //$user->setName('who cares?');
+        //$this->dm->persist($user);
+        //$this->dm->flush();
+        $this->displayForm();
     }
 
     /**
@@ -169,7 +170,8 @@ class MongoDoctrine
     {
         //TODO use _id sent bei GET-request
         $user = $this->dm->find(User::class, new ObjectId('631708a4a5bdfee38b073aea'));
-        $this->dm->remove($user);
-        $this->dm->flush();
+        //$this->dm->remove($user);
+        //$this->dm->flush();
+        $this->displayForm();
     }
 }
