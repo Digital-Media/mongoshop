@@ -54,6 +54,7 @@ class MongoDoctrine
         $config->setHydratorDir('../hydrators');
         $config->setHydratorNamespace('Hydrators');
         $config->setMetadataDriverImpl(AnnotationDriver::create('../src/Documents'));
+        // You can use the next line to set defaultDB or you can set it with Annotations in ../src/Documents/<classfile>
         //$config->setDefaultDB('test');
 
         $this->dm = DocumentManager::create($client, $config);
