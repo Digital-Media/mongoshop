@@ -48,7 +48,7 @@ class Cart
 
     public function getSessionId(): string
     {
-        return $this->product_name;
+        return $this->session_id;
     }
 
     public function setProductName(string $product_name): void
